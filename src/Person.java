@@ -1,5 +1,10 @@
 public class Person {
-    private String Name;
+
+    public Person(String name){
+        this.Name = name;
+    }
+
+    public String Name;
     // returns the person's name
     public String getName(){
         return this.Name;
@@ -15,9 +20,17 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person randomGuy = new Person();
+        Person randomGuy = new Person("Bob");
         randomGuy.setName("Dillian");
-        randomGuy.getName();
+        System.out.println(randomGuy.getName());
+        Person person1 = new Person("John");
+        Person person2 = person1;
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
+        person2.setName("Jane");
+        System.out.println(person1.getName());
+        System.out.println(person2.getName());
     }
+
 
 }
